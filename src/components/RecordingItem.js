@@ -8,7 +8,7 @@ const RecordingItem = ({timerecording}) => {
             <View style={styles.recordingItemView}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name="rocket" size={20} color="gray" />
-                    <Text style={{marginLeft: 10}}>{timerecording.title}</Text>
+                    <Text style={styles.titleText}>{timerecording.title}</Text>
                 </View>
                 <Icon name="power-off" size={20} color="gray" />
             </View>
@@ -18,7 +18,7 @@ const RecordingItem = ({timerecording}) => {
 
 const styles = StyleSheet.create({
     recordingItem: {
-        marginTop: 5,
+        marginBottom: 5,
         paddingHorizontal: 5,
         paddingVertical: 10,
         backgroundColor: '#eee',
@@ -27,6 +27,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+    },
+    titleText: {
+        marginLeft: 10,
+        fontSize: 20,
     }
 })
 

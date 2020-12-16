@@ -28,7 +28,8 @@ const Timetracker = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        padding: 10,
+        // backgroundColor: 'red',
     },
 })
 
