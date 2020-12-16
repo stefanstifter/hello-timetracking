@@ -1,11 +1,22 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
 const Recording = ({timerecording}) => {
     return (
-        <Text>{timerecording.title}</Text>
+        <TouchableOpacity style={styles.recordingItem}>
+            <View>
+                <Text>{timerecording.title}</Text>
+            </View>
+        </TouchableOpacity>
     )
-
 }
+
+const styles = StyleSheet.create({
+    recordingItem: {
+        marginTop: 5,
+        padding: 10,
+        backgroundColor: '#eee',
+    }
+})
 
 export default Recording;

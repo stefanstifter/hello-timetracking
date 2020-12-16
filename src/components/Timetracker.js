@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, FlatList } from 'react-native';
+import { Text, FlatList, StyleSheet } from 'react-native';
 import Recording from './Recording';
 
 const Timetracker = () => {
@@ -19,11 +19,17 @@ const Timetracker = () => {
     ];
 
     return (
-        <FlatList
+        <FlatList style={styles.container}
             data={timeTrackings}
             renderItem={({item}) => <Recording timerecording={item} />}
         />
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 10,
+    },
+})
 
 export default Timetracker
