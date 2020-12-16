@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, FlatList, StyleSheet } from 'react-native';
 import RecordingItem from './RecordingItem';
 
 const Timetracker = () => {
-    const timeTrackings = [
+    const [ timeRecords, setTimeRecords ] = useState([
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'First Item',
@@ -16,11 +16,11 @@ const Timetracker = () => {
           id: '58694a0f-3da1-471f-bd96-145571e29d72',
           title: 'Third Item',
         },
-    ];
+    ]);
 
     return (
         <FlatList style={styles.container}
-            data={timeTrackings}
+            data={timeRecords}
             renderItem={({item}) => <RecordingItem timerecording={item} />}
         />
     )
