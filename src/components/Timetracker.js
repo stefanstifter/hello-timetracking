@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, FlatList, StyleSheet } from 'react-native';
-import Recording from './Recording';
+import RecordingItem from './RecordingItem';
 
 const Timetracker = () => {
     const timeTrackings = [
@@ -21,7 +21,7 @@ const Timetracker = () => {
     return (
         <FlatList style={styles.container}
             data={timeTrackings}
-            renderItem={({item}) => <Recording timerecording={item} />}
+            renderItem={({item}) => <RecordingItem timerecording={item} />}
         />
     )
 }
