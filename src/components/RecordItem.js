@@ -2,15 +2,20 @@ import React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
-const RecordingItem = ({timerecording}) => {
+const RecordingItem = ({record, deleteRecord}) => {
     return (
         <TouchableOpacity style={styles.recordingItem}>
             <View style={styles.recordingItemView}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name="rocket" size={20} color="gray" />
-                    <Text style={styles.titleText}>{timerecording.title}</Text>
+                    <Text style={styles.titleText}>{record.title}</Text>
                 </View>
-                <Icon name="power-off" size={20} color="gray" />
+                <Icon
+                    onPress={() => deleteRecord(record.id)}
+                    name="power-off"
+                    size={20}
+                    color="gray"
+                />
             </View>
         </TouchableOpacity>
     )

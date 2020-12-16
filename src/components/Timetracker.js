@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Text, FlatList, StyleSheet } from 'react-native';
-import RecordingItem from './RecordingItem';
+import { FlatList, StyleSheet } from 'react-native';
+import RecordItem from './RecordItem';
 
 const Timetracker = () => {
-    const [ timeRecords, setTimeRecords ] = useState([
+    const [ records, setRecords ] = useState([
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'First Item',
@@ -18,10 +18,14 @@ const Timetracker = () => {
         },
     ]);
 
+    const deleteRecord = (id) => {
+        setRecords(prev => prev.filter(item => item.id !== id));
+    };
+
     return (
         <FlatList style={styles.container}
-            data={timeRecords}
-            renderItem={({item}) => <RecordingItem timerecording={item} />}
+            data={records}
+            renderItem={({item}) => <RecordItem record={item} deleteRecord={deleteRecord} />}
         />
     )
 }
