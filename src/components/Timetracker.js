@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import AddRecord from './AddRecord';
+import TimeRecordCreate from './TimeRecordCreate';
 import RecordItem from './RecordItem';
 
 const Timetracker = () => {
@@ -32,7 +32,7 @@ const Timetracker = () => {
                 )}
             />
 
-            <AddRecord style={{ width: 100 }}/>
+            <TimeRecordCreate style={{ width: 100 }}/>
         </View>
     )
 }
