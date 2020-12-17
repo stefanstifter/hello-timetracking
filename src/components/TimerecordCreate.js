@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
-const TimeRecordCreate = (props) => {
+const TimerecordCreate = (props) => {
     const [text, setText] = useState('');
     const [hours, setHours] = useState('');
 
@@ -18,6 +18,7 @@ const TimeRecordCreate = (props) => {
             project: text,
             hours: hours,
         }));
+        resetTimerecordData();
     };
 
     return (
@@ -47,8 +48,12 @@ const TimeRecordCreate = (props) => {
                 </View>
             </TouchableOpacity>
         </View>
-
     );
+
+    function resetTimerecordData() {
+        setText('');
+        setHours('');
+    }
 }
 
 const styles = StyleSheet.create({
@@ -71,4 +76,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TimeRecordCreate;
+export default TimerecordCreate;

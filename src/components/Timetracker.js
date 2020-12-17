@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import TimeRecordCreate from './TimeRecordCreate';
+import TimerecordCreate from './TimerecordCreate';
 import RecordItem from './RecordItem';
 import { timerecords } from "../initial-timerecords";
 
@@ -27,7 +27,7 @@ const Timetracker = () => {
                 )}
             />
 
-            <TimeRecordCreate
+            <TimerecordCreate
                 createTimeRecord={createTimeRecord}
             />
         </View>
