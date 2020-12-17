@@ -8,7 +8,7 @@ const RecordingItem = ({record, deleteRecord}) => {
             <View style={styles.recordingItemView}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name="rocket" size={20} color="gray" />
-                    <Text style={styles.titleText}>{record.title}</Text>
+                    <Text style={styles.titleText}>{record.text}</Text>
                 </View>
                 <Icon
                     onPress={() => deleteRecord(record.id)}

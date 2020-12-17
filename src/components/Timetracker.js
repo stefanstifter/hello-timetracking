@@ -2,26 +2,18 @@ import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import TimeRecordCreate from './TimeRecordCreate';
 import RecordItem from './RecordItem';
+import { v4 as uuid } from 'uuid';
 
 const Timetracker = () => {
     const [ records, setRecords ] = useState([
-        {
-          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-          title: 'First Item',
-        },
-        {
-          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-          title: 'Second Item',
-        },
-        {
-          id: '58694a0f-3da1-471f-bd96-145571e29d72',
-          title: 'Third Item',
-        },
+        { id: uuid(), text: 'Project A: 17h' },
+        { id: uuid(), text: 'Project B: 23h' },
+        { id: uuid(), text: 'Project C: 12h' },
     ]);
 
-    const createRecord = (title) => {
+    const createRecord = (text) => {
         setRecords(prev => {
-            return [ ...prev, {id: 'adasöfkads', title} ];
+            return [ ...prev, {id: uuid(), text} ];
         });
     }
 
