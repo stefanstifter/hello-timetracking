@@ -19,6 +19,12 @@ const Timetracker = () => {
         },
     ]);
 
+    const createRecord = (title) => {
+        setRecords(prev => {
+            return [ ...prev, {id: 'adasöfkads', title} ];
+        });
+    }
+
     const deleteRecord = (id) => {
         setRecords(prev => prev.filter(item => item.id !== id));
     };
@@ -32,7 +38,7 @@ const Timetracker = () => {
                 )}
             />
 
-            <TimeRecordCreate style={{ width: 100 }}/>
+            <TimeRecordCreate createRecord={createRecord} />
         </View>
     )
 }
