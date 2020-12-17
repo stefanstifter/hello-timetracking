@@ -3,12 +3,10 @@ import moment from 'moment';
 
 class Timerecord {
     constructor(timerecordData) {
-        console.log('hey');
-        console.log(moment().format());
         this.id = uuid(),
         this.project = timerecordData.project;
         this.hours = timerecordData.hours;
-        this.date = Date.now();
+        this.date = moment().format();
     }
 }
 

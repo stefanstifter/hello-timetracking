@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
-const TimerecordCreate = (props) => {
+const TimerecordCreate = ({ createTimerecord }) => {
     const [projectTitle, setProjectTitle] = useState('');
     const [hours, setHours] = useState('');
 
@@ -18,7 +18,7 @@ const TimerecordCreate = (props) => {
             alert('Please enter project and hours.');
             return;
         }
-        props.createTimeRecord(new Timerecord({
+        createTimerecord(new Timerecord({
             project: projectTitle,
             hours: hours,
         }));

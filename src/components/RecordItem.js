@@ -2,24 +2,24 @@ import React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
-const RecordingItem = ({record, deleteTimeRecord}) => {
+const RecordingItem = ({timerecord, deleteTimerecord}) => {
     return (
         <TouchableOpacity style={styles.recordingItem}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Icon name="access-alarm" size={30} color="gray" />
                 <View style={{marginHorizontal: 20, flex: 1}}>
-                    <Text style={{fontSize: 20}}>{record.project}</Text>
+                    <Text style={{fontSize: 20}}>{timerecord.project}</Text>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Text style={styles.secondaryText}>
-                            {record.hours} h
+                            {timerecord.hours} h
                         </Text>
                         <Text style={styles.secondaryText}>
-                            {record.date}
+                            {timerecord.date}
                         </Text>
                     </View>
                 </View>
                 <Icon
-                    onPress={() => deleteTimeRecord(record.id)}
+                    onPress={() => deleteTimerecord(timerecord.id)}
                     name="delete-outline"
                     size={24}
                     color="gray"
