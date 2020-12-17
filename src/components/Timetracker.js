@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
+import AddRecord from './AddRecord';
 import RecordItem from './RecordItem';
 
 const Timetracker = () => {
@@ -23,10 +24,16 @@ const Timetracker = () => {
     };
 
     return (
-        <FlatList style={styles.container}
-            data={records}
-            renderItem={({item}) => <RecordItem record={item} deleteRecord={deleteRecord} />}
-        />
+        <View>
+            <FlatList style={styles.container}
+                data={records}
+                renderItem={({item}) => (
+                    <RecordItem record={item} deleteRecord={deleteRecord} />
+                )}
+            />
+
+            <AddRecord />
+        </View>
     )
 }
 
