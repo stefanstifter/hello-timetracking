@@ -10,12 +10,16 @@ import {
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const TimerecordCreate = (props) => {
-    const [text, setText] = useState('');
+    const [projectTitle, setProjectTitle] = useState('');
     const [hours, setHours] = useState('');
 
     const handleCreate = () => {
+        if (!projectTitle || !hours) {
+            alert('Please enter project and hours.');
+            return;
+        }
         props.createTimeRecord(new Timerecord({
-            project: text,
+            project: projectTitle,
             hours: hours,
         }));
         resetTimerecordData();
@@ -25,8 +29,8 @@ const TimerecordCreate = (props) => {
         <View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TextInput
-                    value={text}
-                    onChangeText={text => setText(text)}
+                    value={projectTitle}
+                    onChangeText={text => setProjectTitle(text)}
                     placeholder="project"
                     style={{...styles.input, flex: 4}}
                 />
@@ -51,7 +55,7 @@ const TimerecordCreate = (props) => {
     );
 
     function resetTimerecordData() {
-        setText('');
+        setProjectTitle('');
         setHours('');
     }
 }
