@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Button, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const TimeRecordCreate = (props) => {
     const [text, setText] = useState('');
@@ -18,7 +18,7 @@ const TimeRecordCreate = (props) => {
                 style={styles.createButton}
             >
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                    <Icon name="plus" size={22} color="#d6efbd" style={{marginRight: 16}}/>
+                    <Icon name="add-alarm" size={32} color="#d6efbd" style={{marginRight: 16}}/>
                     <Text style={styles.text}>new timerecord</Text>
                 </View>
             </TouchableOpacity>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     text: {
-        fontSize: 24,
+        fontSize: 26,
         fontFamily: 'monospace',
         color: '#d6efbd',
     }
