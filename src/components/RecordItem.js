@@ -8,7 +8,10 @@ const RecordingItem = ({record, deleteTimeRecord}) => {
             <View style={styles.recordingItemView}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name="access-alarm" size={30} color="gray" />
-                    <Text style={styles.titleText}>{record.text}</Text>
+                    <View style={{marginLeft: 20}}>
+                        <Text style={{fontSize: 20}}>{record.project}</Text>
+                        <Text style={{fontSize: 16, color: 'gray'}}>{record.hours} h</Text>
+                    </View>
                 </View>
                 <Icon
                     onPress={() => deleteTimeRecord(record.id)}
@@ -34,10 +37,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    titleText: {
-        marginLeft: 10,
-        fontSize: 20,
-    }
 })
 
 export default RecordingItem;
