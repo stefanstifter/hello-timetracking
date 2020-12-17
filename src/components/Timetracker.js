@@ -24,15 +24,15 @@ const Timetracker = () => {
     };
 
     return (
-        <View>
-            <FlatList style={styles.container}
+        <View style={styles.container}>
+            <FlatList
                 data={records}
                 renderItem={({item}) => (
                     <RecordItem record={item} deleteRecord={deleteRecord} />
                 )}
             />
 
-            <AddRecord />
+            <AddRecord style={{ width: 100 }}/>
         </View>
     )
 }
@@ -40,7 +40,9 @@ const Timetracker = () => {
 const styles = StyleSheet.create({
     container: {
         padding: 10,
-        // backgroundColor: 'red',
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
     },
 })
 
