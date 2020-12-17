@@ -6,7 +6,8 @@ class Timerecord {
         this.id = uuid(),
         this.project = timerecordData.project;
         this.hours = timerecordData.hours;
-        this.date = moment().format();
+        // @ToDo: refactor so that this.date holds the moment object instead of string
+        this.date = timerecordData?.date ?? moment().format('YY-MM-DD');
     }
 }
 
