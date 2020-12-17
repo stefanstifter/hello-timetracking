@@ -14,7 +14,7 @@ const TimeRecordCreate = (props) => {
                 style={styles.input}
             />
             <TouchableOpacity
-                onPress={() => props.createRecord(text)}
+                onPress={() => props.createTimeRecord(text)}
                 style={styles.createButton}
             >
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>

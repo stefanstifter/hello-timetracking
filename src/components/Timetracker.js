@@ -11,13 +11,13 @@ const Timetracker = () => {
         { id: uuid(), text: 'Project C: 12h' },
     ]);
 
-    const createRecord = (text) => {
+    const createTimeRecord = (text) => {
         setRecords(prev => {
             return [ ...prev, {id: uuid(), text} ];
         });
     }
 
-    const deleteRecord = (id) => {
+    const deleteTimeRecord = (id) => {
         setRecords(prev => prev.filter(item => item.id !== id));
     };
 
@@ -26,11 +26,16 @@ const Timetracker = () => {
             <FlatList
                 data={records}
                 renderItem={({item}) => (
-                    <RecordItem record={item} deleteRecord={deleteRecord} />
+                    <RecordItem
+                        record={item}
+                        deleteTimeRecord={deleteTimeRecord}
+                    />
                 )}
             />
 
-            <TimeRecordCreate createRecord={createRecord} />
+            <TimeRecordCreate
+                createTimeRecord={createTimeRecord}
+            />
         </View>
     )
 }
