@@ -7,9 +7,13 @@ import { v4 as uuid } from 'uuid';
 
 const Timetracker = () => {
     const [ records, setRecords ] = useState(timerecords);
-    const createTimeRecord = (text) => {
+    const createTimeRecord = (timerecord) => {
         setRecords(prev => {
-            return [ ...prev, {id: uuid(), text} ];
+            return [ ...prev, {
+                id: uuid(),
+                project: timerecord.project,
+                hours: timerecord.hours,
+            }];
         });
     }
     const deleteTimeRecord = (id) => {

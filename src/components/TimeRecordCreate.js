@@ -4,26 +4,31 @@ import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const TimeRecordCreate = (props) => {
     const [text, setText] = useState('');
+    const [hours, setHours] = useState('');
+
+    const handleCreate = () => {
+        props.createTimeRecord({ project: text, hours });
+    };
 
     return (
         <View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TextInput
-                    onChangeText={text => setText(text)}
                     value={text}
+                    onChangeText={text => setText(text)}
                     placeholder="project"
                     style={{...styles.input, flex: 4}}
                 />
                 <TextInput
-                    onChangeText={text => setText(text)}
-                    value={text}
+                    value={hours}
+                    onChangeText={hours => setHours(hours)}
                     placeholder="hours"
                     keyboardType='numeric'
                     style={{...styles.input, flex: 1, marginLeft: 2}}
                 />
             </View>
             <TouchableOpacity
-                onPress={() => props.createTimeRecord(text)}
+                onPress={handleCreate}
                 style={styles.createButton}
             >
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
