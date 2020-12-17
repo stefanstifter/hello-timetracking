@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Button, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const TimeRecordCreate = (props) => {
@@ -7,12 +7,21 @@ const TimeRecordCreate = (props) => {
 
     return (
         <View>
-            <TextInput
-                onChangeText={text => setText(text)}
-                value={text}
-                placeholder="create new timerecord"
-                style={styles.input}
-            />
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <TextInput
+                    onChangeText={text => setText(text)}
+                    value={text}
+                    placeholder="project"
+                    style={{...styles.input, flex: 4}}
+                />
+                <TextInput
+                    onChangeText={text => setText(text)}
+                    value={text}
+                    placeholder="hours"
+                    keyboardType='numeric'
+                    style={{...styles.input, flex: 1, marginLeft: 2}}
+                />
+            </View>
             <TouchableOpacity
                 onPress={() => props.createTimeRecord(text)}
                 style={styles.createButton}
@@ -35,8 +44,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     input: {
-        backgroundColor: '#eee',
         fontSize: 20,
+        borderWidth: 1,
+        borderColor: '#f8f8f8',
+        backgroundColor: '#fff',
     },
     text: {
         fontSize: 26,
