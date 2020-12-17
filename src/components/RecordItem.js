@@ -5,15 +5,17 @@ import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 const RecordingItem = ({record, deleteTimeRecord}) => {
     return (
         <TouchableOpacity style={styles.recordingItem}>
-            <View style={styles.recordingItemView}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                    <Icon name="access-alarm" size={30} color="gray" />
-                    <View style={{marginLeft: 20}}>
-                        <Text style={{fontSize: 20}}>{record.project}</Text>
-                        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <Text style={{fontSize: 16, color: 'gray'}}>{record.hours} h</Text>
-                            <Text style={{fontSize: 16, color: 'gray'}}>{record.date} h</Text>
-                        </View>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Icon name="access-alarm" size={30} color="gray" />
+                <View style={{marginHorizontal: 20, flex: 1}}>
+                    <Text style={{fontSize: 20}}>{record.project}</Text>
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                        <Text style={styles.secondaryText}>
+                            {record.hours} h
+                        </Text>
+                        <Text style={styles.secondaryText}>
+                            {record.date}
+                        </Text>
                     </View>
                 </View>
                 <Icon
@@ -40,6 +42,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    secondaryText: {
+        fontSize: 16,
+        color: 'gray',
+    }
 })
 
 export default RecordingItem;
