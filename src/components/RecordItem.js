@@ -10,7 +10,10 @@ const RecordingItem = ({record, deleteTimeRecord}) => {
                     <Icon name="access-alarm" size={30} color="gray" />
                     <View style={{marginLeft: 20}}>
                         <Text style={{fontSize: 20}}>{record.project}</Text>
-                        <Text style={{fontSize: 16, color: 'gray'}}>{record.hours} h</Text>
+                        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <Text style={{fontSize: 16, color: 'gray'}}>{record.hours} h</Text>
+                            <Text style={{fontSize: 16, color: 'gray'}}>{record.date} h</Text>
+                        </View>
                     </View>
                 </View>
                 <Icon

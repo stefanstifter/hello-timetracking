@@ -3,19 +3,14 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import TimeRecordCreate from './TimeRecordCreate';
 import RecordItem from './RecordItem';
 import { timerecords } from "../initial-timerecords";
-import { v4 as uuid } from 'uuid';
 
 const Timetracker = () => {
     const [ records, setRecords ] = useState(timerecords);
+
     const createTimeRecord = (timerecord) => {
-        setRecords(prev => {
-            return [ ...prev, {
-                id: uuid(),
-                project: timerecord.project,
-                hours: timerecord.hours,
-            }];
-        });
+        setRecords(prev => [...prev, timerecord]);
     }
+
     const deleteTimeRecord = (id) => {
         setRecords(prev => prev.filter(item => item.id !== id));
     };

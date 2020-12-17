@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import Timerecord from '../models/Timerecord';
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    StyleSheet
+} from "react-native";
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const TimeRecordCreate = (props) => {
@@ -7,7 +14,10 @@ const TimeRecordCreate = (props) => {
     const [hours, setHours] = useState('');
 
     const handleCreate = () => {
-        props.createTimeRecord({ project: text, hours });
+        props.createTimeRecord(new Timerecord({
+            project: text,
+            hours: hours,
+        }));
     };
 
     return (
